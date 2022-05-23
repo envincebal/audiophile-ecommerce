@@ -1,0 +1,22 @@
+.navbar{
+  height: 97px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #535353;
+  .nav-links{
+    display: flex;
+
+    .link-item{
+      list-style-type: none;
+      margin: 0 10px;
+      letter-spacing: 2px;
+    }
+
+    .link-item a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 13px;
+    }
+  }
+}
