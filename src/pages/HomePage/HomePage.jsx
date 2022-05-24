@@ -1,5 +1,7 @@
 import React from 'react';
 import Navbar from "../../components/Navbar/Navbar";
+import Button from "../../components/Button/Button";
+import CategoryCards from "../../components/CategoryCards/CategoryCards";
 
 import "./HomePage.scss";
 
@@ -13,8 +15,10 @@ const HomePage = () => {
             <p className="new-product-text">NEW PRODUCT</p>
             <h1 className="hero-title">XX99 MARK II HEADPHONES</h1>
             <p className="hero-text">  Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+            <Button text={"SEE PRODUCT"} type={"type-1"} />
           </div>
         </header>
+        <CategoryCards />
       </div>
     </div>
 

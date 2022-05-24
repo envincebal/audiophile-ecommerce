@@ -1,0 +1,54 @@
+.btn {
+  cursor: pointer;
+  a {
+    text-decoration: none;
+  }
+}
+
+.type-1 {
+  background-color: #d87d4a;
+  border: none;
+  transition: all 0.3s ease;
+  width: 160px;
+  height: 48px;
+  a {
+    color: #fff;
+  }
+}
+
+.type-1:hover {
+  
+  background-color: #fbaf85;
+}
+
+
+.type-2{
+  background-color: #fff;
+  border: 1px solid #000;
+  transition: all 0.3s ease;
+  width: 160px;
+  height: 48px;
+  a{
+    color: #000;
+  }
+}
+
+.type-2:hover {
+  background-color: #000;
+
+  a{
+    color: #fff;
+  }
+}
+
+.type-3{
+  width: 58px;
+  height: 18px;
+  a{
+  color: #00000050;    
+
+  .arrow-link{
+    color: #D87D4A;
+  }
+  }
+}
