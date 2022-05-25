@@ -17,13 +17,12 @@
 }
 
 .type-1:hover {
-  
   background-color: #fbaf85;
 }
 
 
 .type-2{
-  background-color: #fff;
+background-color: transparent;
   border: 1px solid #000;
   transition: all 0.3s ease;
   width: 160px;
@@ -42,6 +41,26 @@
 }
 
 .type-3{
+  background-color: #000; 
+  color: #fff;
+  transition: all 0.3s ease;
+  width: 160px;
+  height: 48px;
+
+  a{
+    color: #fff;
+  }
+}
+
+.type-3:hover {
+  background-color: #fff;
+
+  a{
+    color: #000;
+  }
+}
+
+.type-4{
   width: 58px;
   height: 18px;
   a{

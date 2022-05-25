@@ -4,7 +4,7 @@ import "./Button.scss";
 
 const Button = ({text, type, link}) => {
   let span;
-  if(type === "type-3"){
+  if(type === "type-4"){
     span =  <span className="arrow-link">{">"}</span>
   }
   return (

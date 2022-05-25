@@ -6,7 +6,7 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   return (
-    <nav className="navbar container">
+    <nav className="navbar ">
       <img src={Logo} alt="logo"/>
       <ul className="nav-links">
         <li className="link-item">
