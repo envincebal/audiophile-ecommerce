@@ -1,0 +1,31 @@
+.constant-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .constant-info {
+    width: 48%;
+    padding-right: 85px;
+    .constant-title{
+      font-size: 40px;
+      line-height: 44px;
+      margin-bottom: 30px;
+      .best-span{
+        color: #D87D4A;
+      }
+    }
+
+    .constant-desc{
+      font-size: 15px;
+      line-height: 25px;
+      color: #00000079;
+    }
+  }
+
+  .constant-img {
+    background-image: url("../../assets/shared/desktop/image-best-gear.jpg");
+    width: 48%;
+    height: 588px;
+    border-radius: 10px;
+  }
+}
