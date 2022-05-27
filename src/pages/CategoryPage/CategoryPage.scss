@@ -1,0 +1,15 @@
+.category-hero {
+  height: 336px;
+  background-color: #000;
+  position: relative;
+  .category-title {
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    margin-top: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 44px;
+  }
+}

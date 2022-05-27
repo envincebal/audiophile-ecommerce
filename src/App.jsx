@@ -2,6 +2,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
+import Footer from "./components/Footer/Footer";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
 
         <Route path="/product" element={< ProductPage />}/>
         <Route path="/checkout" element={< CheckoutPage />}/>
+   
       </Routes>
-
+   <Footer />  
     </BrowserRouter>
 
   );

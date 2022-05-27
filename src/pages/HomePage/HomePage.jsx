@@ -4,7 +4,6 @@ import Button from "../../components/Button/Button";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import FeaturedProducts from "../../components/FeaturedProducts/FeaturedProducts";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
-import Footer from "../../components/Footer/Footer";
 
 import "./HomePage.scss";
 
@@ -27,7 +26,7 @@ const HomePage = () => {
       <CategoryCards/>
       <FeaturedProducts/>
       <ConstantDetails/>
-      <Footer/>
+ 
     </div>
 
   )
