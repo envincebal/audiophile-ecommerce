@@ -10,15 +10,27 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={< HomePage />}/>
-        <Route path="/speakers" element={< CategoryPage />}/>
-        <Route path="/headphones" element={< CategoryPage />}/>
-        <Route path="/earphones" element={< CategoryPage />}/>
+        <Route
+          path="/speakers"
+          element={< CategoryPage category = {
+          "speakers"
+        } />}/>
+        <Route
+          path="/headphones"
+          element={< CategoryPage category = {
+          "headphones"
+        } />}/>
+        <Route
+          path="/earphones"
+          element={< CategoryPage category = {
+          "earphones"
+        } />}/>
 
         <Route path="/product" element={< ProductPage />}/>
         <Route path="/checkout" element={< CheckoutPage />}/>
-   
+
       </Routes>
-   <Footer />  
+      <Footer/>
     </BrowserRouter>
 
   );

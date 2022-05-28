@@ -5,6 +5,15 @@
   .footer-content {
     position: relative;
 
+    &:after {
+      content: " ";
+      background-color: #d87d4a;
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 5px;
+    }
+
     .footer-nav {
       display: flex;
       justify-content: space-between;
@@ -55,13 +64,5 @@
       font-size: 15px;
       font-weight: 700;
     }
-  }
-  .footer-content:after {
-    content: " ";
-    background-color: #d87d4a;
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 5px;
   }
 }

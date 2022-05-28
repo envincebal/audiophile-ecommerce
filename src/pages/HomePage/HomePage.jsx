@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
@@ -21,12 +20,13 @@ const HomePage = () => {
               passionate music enthusiast.</p>
             <Button text={"SEE PRODUCT"} type={"type-1"}/>
           </div>
+
         </header>
       </div>
       <CategoryCards/>
       <FeaturedProducts/>
       <ConstantDetails/>
- 
+
     </div>
 
   )
