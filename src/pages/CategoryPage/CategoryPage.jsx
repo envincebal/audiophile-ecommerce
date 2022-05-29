@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Navbar from "../../components/Navbar/Navbar";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
+import CategoryProduct from "../../components/CategoryProduct/CategoryProduct";
 import {getItems} from "../../api/APICalls";
 import "./CategoryPage.scss";
 
@@ -19,10 +20,18 @@ const CategoryPage = ({category}) => {
         <Navbar/>
         <h1 className="category-title">{category.toUpperCase()}</h1>
       </div>
-      {categories.map((item, index) => {
-        return <p key={index}>{item.name}</p>
-      }).reverse()
+      <div className="products-div container">
+        {categories.map((item, index) => {
+          return <CategoryProduct
+            key={index}
+            id={index}
+            length={categories.length}
+            name={item.name}
+            img={item.image.desktop}
+            desc={item.description}/>
+        }).reverse()
 }
+      </div>
 
       <CategoryCards/>
       <ConstantDetails/>

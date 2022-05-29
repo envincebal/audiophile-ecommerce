@@ -1,0 +1,35 @@
+.category-product {
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+  justify-content: space-between;
+  .category-img {
+    max-width: 540px;
+    width: 49%;
+    border-radius: 10px;
+  }
+
+  .category-info {
+    width: 49%;
+    .new-product {
+      color: #d87d4a;
+      font-size: 14px;
+      letter-spacing: 10px;
+    }
+
+    .category-title {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    .category-desc {
+      font-size: 15px;
+      line-height: 25px;
+      color: #00000079;
+    }
+  }
+}
+
+.category-product:nth-child(even) {
+flex-direction: row-reverse;
+}
