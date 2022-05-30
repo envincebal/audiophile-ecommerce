@@ -1,4 +1,4 @@
-export const getItems = async(typeFilter, setData) => {
+export const getCategories = async(typeFilter, setData) => {
   try {
     const res = await fetch("./data.json")
     const data = await res.json();
@@ -8,4 +8,15 @@ export const getItems = async(typeFilter, setData) => {
     console.log(error)
   }
 
+}
+
+export const getItem = async(slug) => {
+  try {
+    const res = await fetch("./data.json")
+    const data = await res.json();
+
+
+  } catch (error) {
+    console.log(error)
+  }
 }

@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
 import CategoryProduct from "../../components/CategoryProduct/CategoryProduct";
-import {getItems} from "../../api/APICalls";
+import {getCategories} from "../../api/APICalls";
 import "./CategoryPage.scss";
 
 const CategoryPage = ({category}) => {
@@ -12,7 +12,7 @@ const CategoryPage = ({category}) => {
     setCategories] = useState([])
 
   useEffect(() => {
-    getItems(category, setCategories);
+    getCategories(category, setCategories);
   }, [category]);
   return (
     <div className="category-page">
@@ -26,9 +26,11 @@ const CategoryPage = ({category}) => {
             key={index}
             id={index}
             length={categories.length}
+            category={item.category}
             name={item.name}
             img={item.image.desktop}
-            desc={item.description}/>
+            desc={item.description}
+            slug={item.slug} />
         }).reverse()
 }
       </div>
