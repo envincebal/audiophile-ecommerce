@@ -28,7 +28,7 @@ function App() {
           "earphones"
         } />}/>
 
-        <Route path="/:category/:slug" element={< ProductPage />}/>
+        <Route path="/product/:slug" element={< ProductPage />}/>
         <Route path="/checkout" element={< CheckoutPage />}/>
 
       </Routes>
