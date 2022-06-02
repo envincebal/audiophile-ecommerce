@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from "../Button/Button";
-import ZX9 from "../../assets/home/desktop/image-speaker-zx9.png";
 
 import "./FeaturedProducts.scss";
 
@@ -8,7 +7,7 @@ const FeaturedProducts = () => {
   return (
     <section className="home-product container">
     <div className="home-product-ZX9">
-      <img className="ZX9-img" src={ZX9} alt={ZX9}/>
+      <img className="ZX9-img" src={"/assets/home/desktop/image-speaker-zx9.png"} alt={"ZX9-img"}/>
       <div className="ZX9-info">
         <h1 className="ZX9-title">ZX9 SPEAKER</h1>
         <p className="ZX9-desc">Upgrade to premium speakers that are phenomenally built

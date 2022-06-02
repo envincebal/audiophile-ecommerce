@@ -1,6 +1,7 @@
+
 export const getCategories = async(typeFilter, setData) => {
   try {
-    const res = await fetch("./data.json")
+    const res = await fetch("/data.json")
     const data = await res.json();
 
     return setData(data.filter(item => item.category === typeFilter)) ;
@@ -12,7 +13,7 @@ export const getCategories = async(typeFilter, setData) => {
 
 export const getItem = async(slug, setData) => {
   try {
-    const res = await fetch("./data.json")
+    const res = await fetch("/data.json")
     const data = await res.json();
 
     return setData(data.filter(item => item.slug === slug));
@@ -21,3 +22,15 @@ export const getItem = async(slug, setData) => {
     console.log(error)
   }
 }
+export const getItems = async(setData) => {
+  try {
+    const res = await fetch("./data.json")
+    const data = await res.json();
+
+    return setData(data);
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+

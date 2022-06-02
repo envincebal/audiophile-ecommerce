@@ -1,13 +1,11 @@
 import React from 'react';
-import Logo from "../../assets/shared/desktop/logo.svg";
-import Cart from "../../assets/shared/desktop/icon-cart.svg";
 import {Link} from "react-router-dom";
 import "./Navbar.scss";
 
 const Navbar = () => {
   return (
     <nav className="navbar ">
-      <img src={Logo} alt="logo"/>
+      <img src={"/assets/shared/desktop/logo.svg"} alt="logo"/>
       <ul className="nav-links">
         <li className="link-item">
           <Link to={"/"}>HOME</Link>
@@ -22,7 +20,7 @@ const Navbar = () => {
           <Link to={"/earphones"}>EARPHONES</Link>
         </li>
       </ul>
-      <img src={Cart} alt="cart" />
+      <img src={"/assets/shared/desktop/icon-cart.svg"} alt="cart" />
     </nav>
   )
 }

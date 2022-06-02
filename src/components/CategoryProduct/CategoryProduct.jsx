@@ -7,7 +7,6 @@ import "./CategoryProduct.scss";
 const CategoryProduct = ({
   id,
   length,
-  category,
   img,
   name,
   desc,
@@ -15,9 +14,16 @@ const CategoryProduct = ({
 }) => {
 const [info,setInfo] = useState(null);
 
+
+
+
 useEffect(() => {
- getItem(slug, setInfo) 
+
+ getItem(slug, setInfo);
+
 }, [slug]);
+
+
   return (
     <div className="category-product">
       <img className="category-img" src={`${img}`} alt={name}/>
@@ -25,6 +31,7 @@ useEffect(() => {
         {id === length - 1
           ? <p className="new-product">NEW PRODUCT</p>
           : null}
+
         <h1 className="category-title">{name.toUpperCase()}</h1>
         <p className="category-desc">{desc}</p>
         <Link to={`/product/${slug}`} state={{info}}>
