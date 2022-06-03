@@ -12,10 +12,7 @@ const CategoryProduct = ({
   desc,
   slug
 }) => {
-const [info,setInfo] = useState(null);
-
-
-
+const [info,setInfo] = useState([]);
 
 useEffect(() => {
 
@@ -34,7 +31,7 @@ useEffect(() => {
 
         <h1 className="category-title">{name.toUpperCase()}</h1>
         <p className="category-desc">{desc}</p>
-        <Link to={`/product/${slug}`} state={{info}}>
+        <Link to={`/product/${slug}`} state={{info: info[0]}}>
           <Button type={"type-1"} text={"SEE PRODUCT"}/>
         </Link>
 

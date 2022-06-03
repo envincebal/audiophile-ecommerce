@@ -12,7 +12,6 @@ const CategoryLink = ({img, text, link}) => {
       <Link to={`${link}`}>
       <Button text={"SHOP"} type={"type-4"}/>
       </Link>
-      {console.log(link)}
     </div>
   )
 }

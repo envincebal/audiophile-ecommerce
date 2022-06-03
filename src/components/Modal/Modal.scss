@@ -1,0 +1,50 @@
+.modal {
+  background-color: #fff;
+  width: 377px;
+  position: absolute;
+  right: 250px;
+  top: 5px;
+  border-radius: 10px;
+  padding: 20px;
+
+  .cart-remove-div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .cart {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .remove-all-btn {
+      background-color: transparent;
+      font-size: 15px;
+      color: #898989;
+      border: none;
+      cursor: pointer;
+    }
+
+    .remove-all-btn:hover {
+      color: #fbaf85;
+    }
+  }
+
+  .total-div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .checkout-btn {
+    width: 100%;
+    height: 48px;
+    border: none;
+    color: #fff;
+    background-color: #d87d4a;
+  }
+
+  .checkout-btn:hover {
+    background-color: #fbaf85;
+    cursor: pointer;
+  }
+}

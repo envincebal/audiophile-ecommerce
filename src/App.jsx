@@ -2,6 +2,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
+
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -20,7 +21,6 @@ function App() {
     <BrowserRouter>
      <ScrollToTop />
       <Routes>
-
         <Route path="/" element={< HomePage />}/>
         <Route
           path="/speakers"
