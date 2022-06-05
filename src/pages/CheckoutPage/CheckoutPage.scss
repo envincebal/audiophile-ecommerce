@@ -1,0 +1,128 @@
+.checkout-page {
+  label {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  }
+
+  input {
+    padding: 2px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    padding: 10px 20px;
+    height: 56px;
+    font-size: 14px;
+    outline: none;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  input:focus {
+    border: 1px solid #d87d4a;
+  }
+
+  h5 {
+    font-size: 13px;
+    color: #d87d4a;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  ::placeholder {
+    color: #a9a9a9;
+    font-weight: 400;
+  }
+  .checkout-navbar {
+    background-color: #000;
+  }
+
+  .checkout-content {
+    display: flex;
+    justify-content: space-between;
+    .checkout-div {
+      background-color: #e7e7e7;
+      border-radius: 10px;
+      width: 65%;
+      padding: 40px;
+
+      .checkout-title {
+        font-size: 32px;
+      }
+
+      .billing-details {
+        .billing-details-content {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .billing-form-group {
+            width: 49%;
+          }
+        }
+      }
+
+      .shipping-info {
+        .shipping-content {
+          .shipping-flex-div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .shipping-form-group {
+              width: 49%;
+            }
+          }
+        }
+      }
+      .payment-details {
+        .payment-content {
+          .payment-method-div {
+            display: flex;
+
+            .payment-form-group {
+              width: 49%;
+              .payment-method {
+                display: flex;
+                flex-direction: row-reverse;
+                cursor: pointer;
+                background-color: #fff;
+                float: left;
+                width: 100%;
+                justify-content: start;
+                border: 1px solid #cfcfcf;
+                border-radius: 10px;
+                height: 56px;
+                padding: 0 20px;
+                margin-bottom: 10px;
+                align-items: center;
+                .payment-radio {
+                  width: 20px;
+                  cursor: pointer;
+                  margin: 0 10px 0 0;
+                }
+
+            
+                .payment-label {
+                  width: 150px;
+                  cursor: pointer;
+                  font-size: 14px; 
+                  margin: 0;
+                }
+              }    
+              .payment-highlight{
+                 border: 1px solid #d87d4a;
+                }
+            }
+          }
+        }
+      }
+    }
+
+    .summary-div {
+      background-color: #e7e7e7;
+      border-radius: 10px;
+      width: 30%;
+    }
+  }
+}

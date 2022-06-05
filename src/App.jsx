@@ -37,9 +37,9 @@ function App() {
           element={< CategoryPage category = {
           "earphones"
         } />}/>
-
-        <Route path="/product/:slug" element={< ProductPage products={products} />}/>
         <Route path="/checkout" element={< CheckoutPage />}/>
+        <Route path="/product/:slug" element={< ProductPage products={products} />}/>
+
 
       </Routes>
       <Footer/>

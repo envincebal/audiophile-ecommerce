@@ -24,7 +24,7 @@ const Navbar = () => {
           </li>
         </ul>
         <img src={"/assets/shared/desktop/icon-cart.svg"} alt="cart"/>
-         <Modal />
+         {/* <Modal /> */}
       </nav>
     </div>
   )

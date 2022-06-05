@@ -30,7 +30,7 @@ const Footer = () => {
             devoted to helping you get the most out of personal audio. Come and visit our
             demo facility - we’re open 7 days a week.</p>
           <div className="social-media">
-            <img className="social-icon" src={"/assets/shared/desktop/logo.svg"} alt="facebook icon"/>
+            <img className="social-icon" src={"/assets/shared/desktop/icon-facebook.svg"} alt="facebook icon"/>
             <img className="social-icon" src={"/assets/shared/desktop/icon-instagram.svg"} alt="instragram icon"/>
             <img className="social-icon" src={"/assets/shared/desktop/icon-twitter.svg"} alt="twitter icon"/>
           </div>
