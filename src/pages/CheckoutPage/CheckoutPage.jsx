@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Navbar from "../../components/Navbar/Navbar";
+import Button from "../../components/Button/Button";
 import "./CheckoutPage.scss";
 
 const CheckoutPage = () => {
@@ -66,17 +67,45 @@ const CheckoutPage = () => {
                   <label>Payment Method</label>
                 </div>
                 <div className="payment-form-group">
-                  <div className={`payment-method ${method === "e-money" ? "payment-highlight" : ""}`} onClick={() => onChangeValue("e-money")}>
+                  <div
+                    className={`payment-method ${method === "e-money"
+                    ? "payment-highlight"
+                    : ""}`}
+                    onClick={() => onChangeValue("e-money")}>
                     <label className="payment-label">
                       e-Money
                     </label>
-                    <input className="payment-radio" type="radio" checked={method === "e-money"} onChange={onChangeValue} />
+                    <input
+                      className="payment-radio"
+                      onClick={() => onChangeValue("e-money")}
+                      type="radio"
+                      readOnly
+                      checked={method === "e-money"}/>
                   </div>
-                  <div className={`payment-method ${method === "cash" ? "payment-highlight" : ""}`} onClick={() => onChangeValue("cash")}>
+                  <div
+                    className={`payment-method ${method === "cash"
+                    ? "payment-highlight"
+                    : ""}`}
+                    onClick={() => onChangeValue("cash")}>
                     <label className="payment-label">
                       Cash On Delivery
                     </label>
-                    <input className="payment-radio" type="radio" checked={method === "cash"} onChange={onChangeValue} />
+                    <input
+                      className="payment-radio"
+                      onClick={() => onChangeValue("cash")}
+                      type="radio"
+                      readOnly
+                      checked={method === "cash"}/>
+                  </div>
+                </div>
+                <div className="cash-money-div">
+                  <div className="payment-form-group">
+                    <label htmlFor="e-money-number">e-Money Number</label>
+                    <input type="text" name="e-money-number" placeholder="238521993"/>
+                  </div>
+                  <div className="payment-form-group">
+                    <label htmlFor="e-money-pin">e-Money PIN</label>
+                    <input type="text" name="e-money-pin" placeholder="6891"/>
                   </div>
                 </div>
               </div>
@@ -84,7 +113,32 @@ const CheckoutPage = () => {
           </div>
         </div>
         <div className="summary-div">
-          khkhkl
+          <div className="summary-content">
+            <h3 className="summary-title">SUMMARY</h3>
+            <ul>
+
+            </ul>
+            <div className="totals-div">
+              <div className="subtotal-price">
+                <h4>SUBTOTAL</h4>
+                <p>$20,094</p>
+              </div>
+              <div className="shipping-price">
+                <h4>SHIPPING</h4>
+                <p>$50</p>
+              </div>
+              <div className="vat-price">
+                <h4>VAT (INCLUDED)</h4>
+                <p>$4,018</p>
+              </div>
+              <br />
+              <div className="grand-total-price">
+                <h4>TOTAL</h4>
+                <p className="grand-total-color">$24,162</p>
+              </div>
+            </div>
+            <Button className="pay-btn" text={"CONTINUE & PAY"} type={"type-1"} />
+          </div>
         </div>
       </div>
 

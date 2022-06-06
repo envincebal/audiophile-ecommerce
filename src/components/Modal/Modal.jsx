@@ -6,7 +6,7 @@ const Modal = () => {
   return (
     <div className="modal container">
       <div className="cart-remove-div">
-        <p className="cart">CART {`(${ 3})`}</p>
+        <p className="cart">CART {`(${3})`}</p>
         <button className="remove-all-btn">Remove all</button>
       </div>
       <div className="total-div">

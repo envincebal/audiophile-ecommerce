@@ -22,4 +22,28 @@
       font-size: 13px;
     }
   }
+
+  .cart-icon{
+    cursor: pointer;
+    background-image: url("/assets/shared/desktop/icon-cart.svg");
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+
+    .item-counter{
+      padding: 2px 0 0 0;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      align-items: center;
+      text-align: center;
+      background-color: #d87d4a;
+      border-radius: 100%;
+      align-items: center;
+      position: relative;
+      left: 10px;
+      top: 10px;
+    }
+  }
 }

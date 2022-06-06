@@ -27,7 +27,7 @@
   h5 {
     font-size: 13px;
     color: #d87d4a;
-    margin-top: 50px;
+    margin-top: 35px;
     margin-bottom: 20px;
   }
 
@@ -75,13 +75,16 @@
           }
         }
       }
-      .payment-details {
+      .payment-details { 
         .payment-content {
           .payment-method-div {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
 
             .payment-form-group {
               width: 49%;
+
               .payment-method {
                 display: flex;
                 flex-direction: row-reverse;
@@ -89,12 +92,12 @@
                 background-color: #fff;
                 float: left;
                 width: 100%;
-                justify-content: start;
+                justify-content: space-between;
                 border: 1px solid #cfcfcf;
                 border-radius: 10px;
                 height: 56px;
                 padding: 0 20px;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
                 align-items: center;
                 .payment-radio {
                   width: 20px;
@@ -102,26 +105,64 @@
                   margin: 0 10px 0 0;
                 }
 
-            
                 .payment-label {
                   width: 150px;
                   cursor: pointer;
-                  font-size: 14px; 
+                  font-size: 14px;
                   margin: 0;
                 }
-              }    
-              .payment-highlight{
-                 border: 1px solid #d87d4a;
-                }
+              }
+              .payment-highlight {
+                border: 1px solid #d87d4a;
+              }
             }
+          }
+          .cash-money-div {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
           }
         }
       }
     }
 
     .summary-div {
-      background-color: #e7e7e7;
-      border-radius: 10px;
+      .summary-content {
+        background-color: #e7e7e7;
+        border-radius: 10px;
+        padding: 20px;
+        .summary-title {
+          font-size: 18px;
+        }
+        .totals-div {
+          .subtotal-price,
+          .shipping-price,
+          .vat-price,
+          .grand-total-price {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            h4 {
+              font-size: 15px;
+              color: #898989;
+              font-weight: 500;
+            }
+
+            p {
+              font-size: 18px;
+              font-weight: 700;
+            }
+
+            .grand-total-color {
+              color: #d87d4a;
+            }
+          }
+        }
+      }
+      button {
+        margin-top: 20px;
+        width: 100%;
+      }
       width: 30%;
     }
   }

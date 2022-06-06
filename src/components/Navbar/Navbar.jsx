@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Modal from "../Modal/Modal";
+import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const [modalToggle,
+    setModalToggle] = useState(false);
+  const {amount} = useSelector(store => store.cart);
+
   return (
     <div>
-      <nav className="navbar ">
-        
-        <img src={"/assets/shared/desktop/logo.svg"} alt="logo"/>
+      <nav className="navbar">
+        <Link to={"/"}>
+          <img src={"/assets/shared/desktop/logo.svg"} alt="logo"/>
+        </Link>
         <ul className="nav-links">
           <li className="link-item">
             <Link to={"/"}>HOME</Link>
@@ -23,8 +29,14 @@ const Navbar = () => {
             <Link to={"/earphones"}>EARPHONES</Link>
           </li>
         </ul>
-        <img src={"/assets/shared/desktop/icon-cart.svg"} alt="cart"/>
-         {/* <Modal /> */}
+        <div className="cart-icon" onClick={() => setModalToggle(prev => !prev)}>
+          {amount > 0 && (
+            <div className="item-counter">{amount}</div>
+          )}
+
+        </div>
+        {modalToggle && (<Modal/>)}
+
       </nav>
     </div>
   )
