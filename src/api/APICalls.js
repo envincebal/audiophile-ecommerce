@@ -1,7 +1,8 @@
 
+
 export const getCategories = async(typeFilter, setData) => {
   try {
-    const res = await fetch("/data.json")
+    const res = await fetch("./data.json")
     const data = await res.json();
 
     return setData(data.filter(item => item.category === typeFilter)) ;
@@ -13,7 +14,7 @@ export const getCategories = async(typeFilter, setData) => {
 
 export const getItem = async(slug, setData) => {
   try {
-    const res = await fetch("/data.json")
+    const res = await fetch("./data.json")
     const data = await res.json();
 
     return setData(data.filter(item => item.slug === slug));

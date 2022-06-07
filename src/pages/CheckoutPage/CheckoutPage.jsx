@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
+import { useSelector } from "react-redux";
 import "./CheckoutPage.scss";
+
 
 const CheckoutPage = () => {
   const [method,
     setMethod] = useState("e-money");
-
+  const {total, products} = useSelector(store => store.cart);
   const onChangeValue = (method) => {
     setMethod(method);
   }
@@ -21,6 +23,7 @@ const CheckoutPage = () => {
           <h1 className="checkout-title">CHECKOUT</h1>
           <div className="billing-details">
             <h5>BILLING DETAILS</h5>
+          {console.log(products)}
             <div className="billing-details-content">
               <div className="billing-form-group">
                 <label htmlFor="name">Name</label>
@@ -121,20 +124,20 @@ const CheckoutPage = () => {
             <div className="totals-div">
               <div className="subtotal-price">
                 <h4>SUBTOTAL</h4>
-                <p>$20,094</p>
+                <p>{`$ ${total}`}</p>
               </div>
               <div className="shipping-price">
                 <h4>SHIPPING</h4>
-                <p>$50</p>
+                <p>$ 50</p>
               </div>
               <div className="vat-price">
                 <h4>VAT (INCLUDED)</h4>
-                <p>$4,018</p>
+                <p>{`$ ${((20 * total) / 100)}`}</p>
               </div>
               <br />
               <div className="grand-total-price">
                 <h4>TOTAL</h4>
-                <p className="grand-total-color">$24,162</p>
+                <p className="grand-total-color">$ 24,162</p>
               </div>
             </div>
             <Button className="pay-btn" text={"CONTINUE & PAY"} type={"type-1"} />

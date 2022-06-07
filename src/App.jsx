@@ -9,14 +9,17 @@ import ScrollToTop from "./components/ScrollToTop";
 import { getItems } from "./api/APICalls";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "./features/cart/cartSlice";
 
 function App() {
   const [products, setProducts] = useState([]);
-
+  const dispatch = useDispatch();
   useEffect(() => {
-
+    
     getItems(setProducts);
-  },[]);
+    dispatch(fetchProducts())
+  },[dispatch]);
   return (
     <BrowserRouter>
      <ScrollToTop />
