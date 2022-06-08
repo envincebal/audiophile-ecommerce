@@ -41,7 +41,7 @@ function App() {
           "earphones"
         } />}/>
         <Route path="/checkout" element={< CheckoutPage />}/>
-        <Route path="/product/:slug" element={< ProductPage products={products} />}/>
+        <Route path="/product/:slug" element={< ProductPage items={products} />}/>
 
 
       </Routes>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct, minusProduct, addToCart } from "../../features/cart/cartSlice";
 import Navbar from "../../components/Navbar/Navbar";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
@@ -8,24 +10,27 @@ import Button from "../../components/Button/Button";
 
 import "./ProductPage.scss";
 
-const ProductPage = ({products}) => {
+const ProductPage = ({items}) => {
   const [others, setOthers] = useState([]);
+  const [counter, setCounter] = useState(0);
   const location = useLocation();
   const productInfo = location.state.info;
-
+  const dispatch = useDispatch();
+  const {products} = useSelector(store => store.cart);
+  
   useEffect(() => {
     let tempArr = [];
     let othersArr = productInfo.others; 
 
     othersArr.forEach(el => {
-      products.forEach(item => {
+      items.forEach(item => {
         if(item.slug === el.slug){
         tempArr.push(item);
         }
     })
 });
-setOthers(tempArr);
-  },[productInfo.others, products]);
+    setOthers(tempArr);
+  },[productInfo.others, items]);
   return (
     <div className="product-page">
       <div className="product-navbar">
@@ -44,9 +49,11 @@ setOthers(tempArr);
           <h6 className="product-price">{`$${productInfo.price}`}</h6>
           <div className="product-controls">
             <div className="counter-div">
-              <button className="minus-product">-</button>
-              <div className="counter">0</div>
-              <button className="add-product">+</button>
+    {console.log(counter)}
+              <button onClick={() => setCounter(prev => prev > 0 ? prev - 1 : 0)} className="minus-product">-</button>
+              <div className="counter">{counter}</div>
+        
+              <button onClick={() => setCounter(prev => prev + 1)} className="add-product">+</button>
             </div>
             <Button type={"type-1"} text={"ADD TO CART"}/>
           </div>

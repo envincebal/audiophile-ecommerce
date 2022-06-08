@@ -7,7 +7,7 @@ import "./Navbar.scss";
 const Navbar = () => {
   const [modalToggle,
     setModalToggle] = useState(false);
-  const {amount} = useSelector(store => store.cart);
+  const {amount, cartItems} = useSelector(store => store.cart);
 
   return (
     <div>
@@ -31,12 +31,11 @@ const Navbar = () => {
         </ul>
         <div className="cart-icon" onClick={() => setModalToggle(prev => !prev)}>
           {amount > 0 && (
-            <div className="item-counter">{amount}</div>
+            <div className="item-counter">{cartItems.length}</div>
           )}
 
         </div>
         {modalToggle && (<Modal/>)}
-
       </nav>
     </div>
   )

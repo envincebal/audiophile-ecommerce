@@ -23,7 +23,7 @@ const CheckoutPage = () => {
           <h1 className="checkout-title">CHECKOUT</h1>
           <div className="billing-details">
             <h5>BILLING DETAILS</h5>
-          {console.log(products)}
+
             <div className="billing-details-content">
               <div className="billing-form-group">
                 <label htmlFor="name">Name</label>
