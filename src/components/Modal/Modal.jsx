@@ -2,13 +2,15 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import "./Modal.scss";
 
-const Modal = () => {
+const Modal = ({items}) => {
+
   return (
     <div className="modal container">
       <div className="cart-remove-div">
-        <p className="cart">CART {`(${3})`}</p>
+        <p className="cart">CART {`(${items})`}</p>
         <button className="remove-all-btn">Remove all</button>
       </div>
+      
       <div className="total-div">
         <p className="total">Total</p>
         <p className="total-amount">$</p>

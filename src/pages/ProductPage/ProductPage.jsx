@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, minusProduct, addToCart } from "../../features/cart/cartSlice";
+import {  addToCart, clearCart, totalPrice } from "../../features/cart/cartSlice";
 import Navbar from "../../components/Navbar/Navbar";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
@@ -14,10 +14,9 @@ const ProductPage = ({items}) => {
   const [others, setOthers] = useState([]);
   const [counter, setCounter] = useState(0);
   const location = useLocation();
-  const productInfo = location.state.info;
   const dispatch = useDispatch();
-  const {products} = useSelector(store => store.cart);
-  
+  const productInfo = location.state.info;
+
   useEffect(() => {
     let tempArr = [];
     let othersArr = productInfo.others; 
@@ -40,22 +39,20 @@ const ProductPage = ({items}) => {
         <div className="product-head">
           <img src={`/${productInfo.image.desktop}`} className="product-img" alt={productInfo.name} />
           <div className="product-info">
-      {productInfo.slug === "xx99-mark-two-headphones" ? <p className="new-product">NEW PRODUCT</p> : ""}
-      {productInfo.slug === "zx9-speaker" ? <p className="new-product">NEW PRODUCT</p> : ""}
-      {productInfo.slug === "yx1-earphones" ? <p className="new-product">NEW PRODUCT</p> : ""}
+          {productInfo.new && <p className="new-product">NEW PRODUCT</p>}
 
           <h1 className="product-title">{productInfo.name.toUpperCase()}</h1>
           <p className="product-desc">{productInfo.description}</p>
           <h6 className="product-price">{`$${productInfo.price}`}</h6>
           <div className="product-controls">
             <div className="counter-div">
-    {console.log(counter)}
-              <button onClick={() => setCounter(prev => prev > 0 ? prev - 1 : 0)} className="minus-product">-</button>
+
+              <button onClick={() => dispatch(totalPrice())} className="minus-product">-</button>
               <div className="counter">{counter}</div>
         
               <button onClick={() => setCounter(prev => prev + 1)} className="add-product">+</button>
             </div>
-            <Button type={"type-1"} text={"ADD TO CART"}/>
+            <Button onClick={() => dispatch(addToCart({id: productInfo.id, name: productInfo.name, price: productInfo.price, count: counter, img: productInfo.image.mobile}) )}  type={"type-1"} text={"ADD TO CART"}/>
           </div>
         </div>
         </div>

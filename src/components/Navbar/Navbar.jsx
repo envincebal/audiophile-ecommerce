@@ -30,12 +30,12 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="cart-icon" onClick={() => setModalToggle(prev => !prev)}>
-          {amount > 0 && (
+          {cartItems.length > 0 && (
             <div className="item-counter">{cartItems.length}</div>
           )}
 
         </div>
-        {modalToggle && (<Modal/>)}
+        {modalToggle && (<Modal items={cartItems.length} />)}
       </nav>
     </div>
   )
