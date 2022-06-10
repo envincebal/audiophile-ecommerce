@@ -12,7 +12,7 @@ import "./ProductPage.scss";
 
 const ProductPage = ({items}) => {
   const [others, setOthers] = useState([]);
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const location = useLocation();
   const dispatch = useDispatch();
   const productInfo = location.state.info;
@@ -43,11 +43,11 @@ const ProductPage = ({items}) => {
 
           <h1 className="product-title">{productInfo.name.toUpperCase()}</h1>
           <p className="product-desc">{productInfo.description}</p>
-          <h6 className="product-price">{`$${productInfo.price}`}</h6>
+          <h6 className="product-price">{`$${productInfo.price.toLocaleString("en-US")}`}</h6>
           <div className="product-controls">
             <div className="counter-div">
 
-              <button onClick={() => dispatch(totalPrice())} className="minus-product">-</button>
+              <button onClick={() => setCounter(prev => prev > 1 ? prev - 1 : 1)} className="minus-product">-</button>
               <div className="counter">{counter}</div>
         
               <button onClick={() => setCounter(prev => prev + 1)} className="add-product">+</button>

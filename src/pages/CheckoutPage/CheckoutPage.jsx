@@ -1,14 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import { useSelector } from "react-redux";
 import "./CheckoutPage.scss";
 
-
 const CheckoutPage = () => {
   const [method,
     setMethod] = useState("e-money");
-  const {total, products} = useSelector(store => store.cart);
+  const {subTotal, vatCost} = useSelector(store => store.cart);
+
+  const shippingCost = 50;
+  const totalCost = subTotal + shippingCost + vatCost;
+
   const onChangeValue = (method) => {
     setMethod(method);
   }
@@ -124,7 +127,7 @@ const CheckoutPage = () => {
             <div className="totals-div">
               <div className="subtotal-price">
                 <h4>SUBTOTAL</h4>
-                <p>{`$ ${total}`}</p>
+                <p>{`$ ${subTotal.toLocaleString("en-US")}`}</p>
               </div>
               <div className="shipping-price">
                 <h4>SHIPPING</h4>
@@ -132,12 +135,12 @@ const CheckoutPage = () => {
               </div>
               <div className="vat-price">
                 <h4>VAT (INCLUDED)</h4>
-                <p>{`$ ${((20 * total) / 100)}`}</p>
+                <p>{`$ ${vatCost.toLocaleString("en-US")}`}</p>
               </div>
               <br />
               <div className="grand-total-price">
                 <h4>TOTAL</h4>
-                <p className="grand-total-color">$ 24,162</p>
+                <p className="grand-total-color">$ {totalCost.toLocaleString("en-US")}</p>
               </div>
             </div>
             <Button className="pay-btn" text={"CONTINUE & PAY"} type={"type-1"} />

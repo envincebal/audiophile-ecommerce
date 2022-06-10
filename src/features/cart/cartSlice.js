@@ -17,8 +17,8 @@ const cartSlice = createSlice({
   initialState: {
     products: [],
     cartItems: [],
-    amount: 0,
-    total: 0
+    subTotal: 0,
+    vatCost: 0
   },
   reducers: {
     clearCart: (state) => {
@@ -44,32 +44,21 @@ const cartSlice = createSlice({
         price: payload.price * payload.count,
         count: payload.count
       }
-    if(!checkCart){
+
+    if (!checkCart) {
       state.cartItems.push(newProduct);
-     
-    }else{
-      if(payload.count === 1){
-        currentProduct.price += currentProduct.price;
-      }
-       currentProduct.price = currentProduct.price * payload.count;
-       currentProduct.count += payload.count;
+      state.subTotal += payload.price * payload.count;
+    } else {
+
+      state.subTotal += currentProduct.price * payload.count;
+      currentProduct.count += payload.count;
     }
 
-       console.log(current(state).cartItems)
-       console.log(payload.count)
-
-    },
-
-    totalPrice:(state) => {
-
-      current(state).cartItems.forEach(item => {
-        state.total += item.price;
-        console.log(item)
-      });
-       console.log(state.total)
+      console.log(current(state).subTotal)
+      state.vatCost = Math.round((20 * state.subTotal) / 100);
     }
 
-   
+    
   },
   extraReducers: {
     [fetchProducts.fulfilled]: (state, {payload}) => {

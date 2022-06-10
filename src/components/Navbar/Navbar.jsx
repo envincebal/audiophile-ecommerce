@@ -7,7 +7,7 @@ import "./Navbar.scss";
 const Navbar = () => {
   const [modalToggle,
     setModalToggle] = useState(false);
-  const {amount, cartItems} = useSelector(store => store.cart);
+  const {subTotal, cartItems} = useSelector(store => store.cart);
 
   return (
     <div>
@@ -35,7 +35,7 @@ const Navbar = () => {
           )}
 
         </div>
-        {modalToggle && (<Modal items={cartItems.length} />)}
+        {modalToggle && (<Modal subTotal={subTotal} itemsLength={cartItems.length} />)}
       </nav>
     </div>
   )
