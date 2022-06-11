@@ -75,7 +75,7 @@
           }
         }
       }
-      .payment-details { 
+      .payment-details {
         .payment-content {
           .payment-method-div {
             display: flex;
@@ -133,7 +133,43 @@
         padding: 20px;
         .summary-title {
           font-size: 18px;
+          margin-bottom: 20px;
         }
+
+        .summary-cart {
+          margin-bottom: 30px;
+          li {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            .summary-cart-info {
+              display: flex;
+              align-items: center;
+              .summary-cart-img {
+                width: 64px;
+                height: 64px;
+                border-radius: 10px;
+              }
+              .summary-cart-desc {
+                margin-left: 10px;
+                font-size: 16px;
+                .name{
+                  font-weight: 700;
+                  margin-bottom: 5px;
+                }
+                .price{
+                  color: #898989;
+                }
+              }
+            }
+            .summary-item-count{
+              color: #898989;
+            }
+          }
+        }
+
         .totals-div {
           .subtotal-price,
           .shipping-price,

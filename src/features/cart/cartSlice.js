@@ -23,16 +23,27 @@ const cartSlice = createSlice({
   reducers: {
     clearCart: (state) => {
       state.cartItems = [];
-
-      console.log(state.cartItems)
+      state.subTotal = 0;
+      state.vatCost = 0;
+      
     },
     addProduct: (state, {payload}) => {
-      let productItem = current(state).products.find(el => el.id === payload.id);
+      let productItem = state.cartItems.find(el => el.id === payload.id);
 
+      productItem.count = productItem.count + 1;
+      state.subTotal += payload.price;
+      state.vatCost = Math.round((20 * state.subTotal) / 100);
     },
     minusProduct: (state, {payload}) => {
-      let currentState = current(state);
-      let productItem = current(state).products.find(el => el.id === payload.id);
+      let productItem = state.cartItems.find(el => el.id === payload.id);
+
+      productItem.count = productItem.count - 1;
+      state.subTotal -= payload.price;
+      state.vatCost = Math.round((20 * state.subTotal) / 100);
+
+      if(productItem.count < 1){
+        state.cartItems = state.cartItems.filter(item => item.id !== payload.id);
+      }
 
     },
     addToCart:(state, {payload}) => {
@@ -40,8 +51,9 @@ const cartSlice = createSlice({
       let currentProduct = state.cartItems.find(({id}) => id === payload.id);
       const newProduct = {
         id: payload.id,
-        name: payload.name,
-        price: payload.price * payload.count,
+        name: payload.name.replace(/Headphones|Earphones|Speaker|Wireless/g, ""),
+        img: payload.img,
+        price: payload.price,
         count: payload.count
       }
 
@@ -54,10 +66,10 @@ const cartSlice = createSlice({
       currentProduct.count += payload.count;
     }
 
-      console.log(current(state).subTotal)
+    console.log(current(state).cartItems)
       state.vatCost = Math.round((20 * state.subTotal) / 100);
     }
-
+   
     
   },
   extraReducers: {

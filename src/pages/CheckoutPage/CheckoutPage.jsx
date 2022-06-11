@@ -1,13 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
+
 import "./CheckoutPage.scss";
 
 const CheckoutPage = () => {
   const [method,
     setMethod] = useState("e-money");
-  const {subTotal, vatCost} = useSelector(store => store.cart);
+  const {subTotal, vatCost, cartItems} = useSelector(store => store.cart);
 
   const shippingCost = 50;
   const totalCost = subTotal + shippingCost + vatCost;
@@ -121,7 +122,20 @@ const CheckoutPage = () => {
         <div className="summary-div">
           <div className="summary-content">
             <h3 className="summary-title">SUMMARY</h3>
-            <ul>
+            <ul className="summary-cart">
+              {cartItems.map(item => {
+                return <li key={item.id}>
+                  <div className="summary-cart-info">
+                    <img className="summary-cart-img" src={`../.${item.img}`} alt="thumbnail"/>
+                    <div className="summary-cart-desc">
+                      <p className="name">{item.name}</p>
+                      <p className="price">$ {item.price}</p>
+                    </div>
+                  </div>
+                  <p className="summary-item-count">x{item.count}</p>
+                </li>
+              })
+}
 
             </ul>
             <div className="totals-div">
@@ -137,17 +151,16 @@ const CheckoutPage = () => {
                 <h4>VAT (INCLUDED)</h4>
                 <p>{`$ ${vatCost.toLocaleString("en-US")}`}</p>
               </div>
-              <br />
+              <br/>
               <div className="grand-total-price">
                 <h4>TOTAL</h4>
                 <p className="grand-total-color">$ {totalCost.toLocaleString("en-US")}</p>
               </div>
             </div>
-            <Button className="pay-btn" text={"CONTINUE & PAY"} type={"type-1"} />
+            <Button className="pay-btn" text={"CONTINUE & PAY"} type={"type-1"}/>
           </div>
         </div>
       </div>
-
     </div>
   )
 }
