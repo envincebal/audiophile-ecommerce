@@ -3,7 +3,6 @@ import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 
-import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
 import { getItems } from "./api/APICalls";
@@ -21,6 +20,7 @@ function App() {
     dispatch(fetchProducts())
   },[dispatch]);
   return (
+
     <BrowserRouter>
      <ScrollToTop />
       <Routes>
@@ -45,7 +45,7 @@ function App() {
 
 
       </Routes>
-      <Footer/>
+ 
     </BrowserRouter>
 
   );

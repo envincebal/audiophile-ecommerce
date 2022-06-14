@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {addProduct, clearCart, minusProduct} from "../../features/cart/cartSlice";
-import "./Modal.scss";
+import "./MenuModal.scss";
 
 const Modal = ({itemsLength, subTotal}) => {
   const dispatch = useDispatch();
