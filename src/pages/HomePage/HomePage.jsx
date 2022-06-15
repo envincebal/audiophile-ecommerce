@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
+import Footer from "../../components/Footer/Footer";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import FeaturedProducts from "../../components/FeaturedProducts/FeaturedProducts";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
@@ -20,13 +21,12 @@ const HomePage = () => {
               passionate music enthusiast.</p>
             <Button text={"SEE PRODUCT"} type={"type-1"}/>
           </div>
-
         </header>
       </div>
       <CategoryCards/>
       <FeaturedProducts/>
       <ConstantDetails/>
-
+      <Footer />
     </div>
 
   )

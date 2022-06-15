@@ -5,19 +5,20 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 
 import ScrollToTop from "./components/ScrollToTop";
 
-import { getItems } from "./api/APICalls";
+
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch,useSelector } from "react-redux";
 import { fetchProducts } from "./features/cart/cartSlice";
 
 function App() {
-  const [products, setProducts] = useState([]);
+
   const dispatch = useDispatch();
+  const {products} = useSelector(store => store.cart);
   useEffect(() => {
     
-    getItems(setProducts);
-    dispatch(fetchProducts())
+   
+dispatch(fetchProducts())
   },[dispatch]);
   return (
 
@@ -30,6 +31,7 @@ function App() {
           element={< CategoryPage category = {
           "speakers"
         } />}/>
+          {console.log(products)}
         <Route
           path="/headphones"
           element={< CategoryPage category = {

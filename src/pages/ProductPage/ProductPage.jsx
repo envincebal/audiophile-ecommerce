@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
-import {  addToCart, clearCart, totalPrice } from "../../features/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import {  addToCart } from "../../features/cart/cartSlice";
 import Navbar from "../../components/Navbar/Navbar";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
+import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
 
 import "./ProductPage.scss";
@@ -108,6 +109,7 @@ const ProductPage = ({items}) => {
 
       <CategoryCards/>
       <ConstantDetails/>
+      <Footer />
     </div>
   )
 }

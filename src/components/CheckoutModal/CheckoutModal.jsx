@@ -1,9 +1,13 @@
 import React from 'react';
-import { useSelector } from "react-redux";
+import Button from "../Button/Button";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import "./CheckoutModal.scss";
+import { clearCart } from "../../features/cart/cartSlice";
 
 const CheckoutModal = () => {
   const {cartItems, subTotal, vatCost} = useSelector(store => store.cart);
+  const dispatch = useDispatch();
 
   const shippingCost = 50;
   const totalCost = subTotal + shippingCost + vatCost;
@@ -11,7 +15,7 @@ const CheckoutModal = () => {
   return (
     <div className="checkout-modal">
       <img className="checkout-img" src="../../assets/checkout/icon-order-confirmation.svg" alt="confirm" />
-      <h2 className="thanks-title">THANK YOU FOR YOUR ORDER</h2>
+      <h2 className="thanks-title">THANK YOU <br /> FOR YOUR ORDER</h2>
       <p className="confirm-desc">You will receive an email confirmation shortly.</p>
       <div className="items-summary">
         <ul className="items-list">
@@ -35,6 +39,9 @@ const CheckoutModal = () => {
           </div>
         </div>
       </div>
+      <Link to={"/"}>
+        <Button onClick={() => dispatch(clearCart())} type={"type-1"} text={"BACK TO HOME"} />
+      </Link>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
 import CategoryProduct from "../../components/CategoryProduct/CategoryProduct";
+import Footer from "../../components/Footer/Footer";
 import {getCategories} from "../../api/APICalls";
 import "./CategoryPage.scss";
 
@@ -37,7 +38,7 @@ const CategoryPage = ({category}) => {
 
       <CategoryCards/>
       <ConstantDetails/>
-
+      <Footer />
     </div>
   )
 }

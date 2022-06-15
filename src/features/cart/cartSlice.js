@@ -1,11 +1,11 @@
-import {createAsyncThunk, createSlice,current } from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchProducts = createAsyncThunk("cart/getProducts", async() => {
   try {
     const res = await fetch("./data.json");
     const data = await res.json();
 
-    return data
+    return data;
   } catch (error) {
     console.log(error)
   }
@@ -15,6 +15,7 @@ export const fetchProducts = createAsyncThunk("cart/getProducts", async() => {
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
+    status: null,
     products: [],
     cartItems: [],
     subTotal: 0,
@@ -25,7 +26,6 @@ const cartSlice = createSlice({
       state.cartItems = [];
       state.subTotal = 0;
       state.vatCost = 0;
-      
     },
     addProduct: (state, {payload}) => {
       let productItem = state.cartItems.find(el => el.id === payload.id);
@@ -66,7 +66,7 @@ const cartSlice = createSlice({
       currentProduct.count += payload.count;
     }
 
-    console.log(current(state).cartItems)
+
       state.vatCost = Math.round((20 * state.subTotal) / 100);
     }
    
@@ -75,6 +75,12 @@ const cartSlice = createSlice({
   extraReducers: {
     [fetchProducts.fulfilled]: (state, {payload}) => {
       state.products = payload;
+    },
+    [fetchProducts.pending]: (state) => {
+      state.status = "Pending";
+    },
+    [fetchProducts.rejected]: (state) => {
+      state.status = "Rejected";
     }
   }
 });

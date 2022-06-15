@@ -22,7 +22,7 @@ const CheckoutPage = () => {
       errors
     }} = useForm();
   const onSubmit = data => console.log(data);
-  console.log(errors);
+
 
   const onChangeValue = (method) => {
     setMethod(method);
