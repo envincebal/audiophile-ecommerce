@@ -11,7 +11,7 @@ const CheckoutPage = () => {
   const [method,
     setMethod] = useState("e-money");
   const [payModal,
-    setPayModal] = useState(true);
+    setPayModal] = useState(false);
 
   const {subTotal, vatCost, cartItems} = useSelector(store => store.cart);
 
@@ -22,7 +22,6 @@ const CheckoutPage = () => {
       errors
     }} = useForm();
   const onSubmit = data => console.log(data);
-
 
   const onChangeValue = (method) => {
     setMethod(method);

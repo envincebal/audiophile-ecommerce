@@ -12,6 +12,11 @@ const CheckoutModal = () => {
   const shippingCost = 50;
   const totalCost = subTotal + shippingCost + vatCost;
 
+  const payBtn = () => {
+    dispatch(clearCart());
+    localStorage.removeItem("productInfo");
+  } 
+
   return (
     <div className="checkout-modal">
       <img className="checkout-img" src="../../assets/checkout/icon-order-confirmation.svg" alt="confirm" />
@@ -40,7 +45,7 @@ const CheckoutModal = () => {
         </div>
       </div>
       <Link to={"/"}>
-        <Button onClick={() => dispatch(clearCart())} type={"type-1"} text={"BACK TO HOME"} />
+        <Button onClick={payBtn} type={"type-1"} text={"BACK TO HOME"} />
       </Link>
     </div>
   )

@@ -66,11 +66,9 @@ const cartSlice = createSlice({
       currentProduct.count += payload.count;
     }
 
-
       state.vatCost = Math.round((20 * state.subTotal) / 100);
     }
-   
-    
+
   },
   extraReducers: {
     [fetchProducts.fulfilled]: (state, {payload}) => {

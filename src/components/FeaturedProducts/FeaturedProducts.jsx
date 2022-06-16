@@ -21,11 +21,9 @@ const FeaturedProducts = () => {
     <div className="home-product-ZX7">
       <div className="ZX7-info">
         <h1 className="ZX7-title">ZX7 SPEAKER</h1>
-        <Link to={`/product/${products[4].slug}`} state={{
-          info: products[4]
-        }}>
+
           <Button text={"SEE PRODUCT"} type={"type-2"}/>
-        </Link>
+   
 
       </div>
     </div>

@@ -4,10 +4,20 @@ import Footer from "../../components/Footer/Footer";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import FeaturedProducts from "../../components/FeaturedProducts/FeaturedProducts";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
+import {Link} from "react-router-dom";
 
 import "./HomePage.scss";
+import { useEffect, useState } from "react";
 
-const HomePage = () => {
+const HomePage = ({products}) => {
+const [homeItem, setHomeItem] = useState([]);
+
+  useEffect(() => {
+  const productsArr = products || JSON.parse(localStorage.getItem("itemsArr"));
+  const findItem = productsArr.find(item => item.slug === "xx99-mark-two-headphones");
+
+  setHomeItem(findItem);
+  },[products]);
   return (
     <div className="homepage">
       <div className="homepage-hero">
@@ -19,14 +29,17 @@ const HomePage = () => {
             <p className="hero-text">
               Experience natural, lifelike audio and exceptional build quality made for the
               passionate music enthusiast.</p>
-            <Button text={"SEE PRODUCT"} type={"type-1"}/>
+            <Link to={"product/xx99-mark-two-headphones"} state={{info: homeItem, products}}>
+              <Button text={"SEE PRODUCT"} type={"type-1"}/>
+            </Link>
+
           </div>
         </header>
       </div>
       <CategoryCards/>
       <FeaturedProducts/>
       <ConstantDetails/>
-      <Footer />
+      <Footer/>
     </div>
 
   )

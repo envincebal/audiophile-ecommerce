@@ -4,17 +4,19 @@ import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
 import CategoryProduct from "../../components/CategoryProduct/CategoryProduct";
 import Footer from "../../components/Footer/Footer";
-import {getCategories} from "../../api/APICalls";
-import "./CategoryPage.scss";
 
+import "./CategoryPage.scss";
+import { useSelector } from "react-redux";
 const CategoryPage = ({category}) => {
 
   const [categories,
     setCategories] = useState([])
-
+    const {products} = useSelector(store => store.cart);
   useEffect(() => {
-    getCategories(category, setCategories);
-  }, [category]);
+    const productsArr = products || JSON.parse(localStorage.getItem("itemsArr"));
+    const getCategories = productsArr.filter(item => item.category === category);
+  setCategories(getCategories);
+  }, []);
   return (
     <div className="category-page">
       <div className="category-hero">

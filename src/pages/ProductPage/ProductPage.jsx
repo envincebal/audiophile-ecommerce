@@ -16,21 +16,27 @@ const ProductPage = ({items}) => {
   const [counter, setCounter] = useState(1);
   const location = useLocation();
   const dispatch = useDispatch();
-  const productInfo = location.state.info;
-
+  const productInfo = location.state.info ||     JSON.parse(localStorage.getItem("productInfo"));
+  const itemsArr = location.state.products || JSON.parse(localStorage.getItem("itemsArr")) ;
   useEffect(() => {
     let tempArr = [];
     let othersArr = productInfo.others; 
 
     othersArr.forEach(el => {
-      items.forEach(item => {
+      itemsArr.forEach(item => {
         if(item.slug === el.slug){
         tempArr.push(item);
         }
-    })
-});
+      })
+    });
     setOthers(tempArr);
-  },[productInfo.others, items]);
+  },[]);
+
+  useEffect(() => {
+    localStorage.setItem("productInfo", JSON.stringify(productInfo));
+    localStorage.setItem("itemsArr", JSON.stringify(itemsArr));
+
+  })
   return (
     <div className="product-page">
       <div className="product-navbar">
@@ -50,7 +56,6 @@ const ProductPage = ({items}) => {
 
               <button onClick={() => setCounter(prev => prev > 1 ? prev - 1 : 1)} className="minus-product">-</button>
               <div className="counter">{counter}</div>
-        
               <button onClick={() => setCounter(prev => prev + 1)} className="add-product">+</button>
             </div>
             <Button onClick={() => dispatch(addToCart({id: productInfo.id, name: productInfo.name, price: productInfo.price, count: counter, img: productInfo.image.mobile}) )}  type={"type-1"} text={"ADD TO CART"}/>
