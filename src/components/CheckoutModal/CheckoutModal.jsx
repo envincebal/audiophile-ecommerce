@@ -40,7 +40,7 @@ const CheckoutModal = () => {
         <div className="grand-total">
           <div className="total-info">
              <p className="total-title">GRAND TOTAL</p>
-          <p className="total-cost">$ {totalCost}</p>
+          <p className="total-cost">$ {totalCost.toLocaleString("en-US")}</p>
           </div>
         </div>
       </div>

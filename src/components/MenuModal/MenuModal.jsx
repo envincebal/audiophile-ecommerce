@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {addProduct, clearCart, minusProduct} from "../../features/cart/cartSlice";
+import {addProduct, clearCart, minusProduct, toggleModal} from "../../features/cart/cartSlice";
 import "./MenuModal.scss";
 
 const Modal = ({itemsLength, subTotal}) => {
@@ -48,7 +48,7 @@ const Modal = ({itemsLength, subTotal}) => {
               <p className="total-amount">$ {subTotal.toLocaleString("en-US")}</p>
             </div>
             <Link to={"/checkout"}>
-              <button className="checkout-btn">CHECKOUT</button>
+              <button onClick={() => dispatch(toggleModal())} className="checkout-btn">CHECKOUT</button>
             </Link>
           </div>
         )}

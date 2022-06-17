@@ -46,7 +46,6 @@ const CheckoutPage = () => {
             <h1 className="checkout-title">CHECKOUT</h1>
             <div className="billing-details">
               <h5>BILLING DETAILS</h5>
-
               <div className="billing-details-content">
                 <div className="billing-form-group">
                   <div
@@ -90,7 +89,6 @@ const CheckoutPage = () => {
                     <label htmlFor="telephone">Phone Number</label>
                     {errors.phoneNumber && <span>Field Required</span>}
                   </div>
-
                   <input
                     className={`${errors.phoneNumber
                     ? "input-error"

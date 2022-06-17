@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import { useDispatch } from "react-redux";
-import {  addToCart } from "../../features/cart/cartSlice";
+import { addToCart } from "../../features/cart/cartSlice";
 import Navbar from "../../components/Navbar/Navbar";
 import CategoryCards from "../../components/CategoryCards/CategoryCards";
 import ConstantDetails from "../../components/ConstantDetails/ConstantDetails";
@@ -16,6 +16,7 @@ const ProductPage = ({items}) => {
   const [counter, setCounter] = useState(1);
   const location = useLocation();
   const dispatch = useDispatch();
+
   const productInfo = location.state.info ||     JSON.parse(localStorage.getItem("productInfo"));
   const itemsArr = location.state.products || JSON.parse(localStorage.getItem("itemsArr")) ;
   useEffect(() => {
@@ -56,7 +57,9 @@ const ProductPage = ({items}) => {
 
               <button onClick={() => setCounter(prev => prev > 1 ? prev - 1 : 1)} className="minus-product">-</button>
               <div className="counter">{counter}</div>
-              <button onClick={() => setCounter(prev => prev + 1)} className="add-product">+</button>
+              <button onClick={() =>{ 
+                
+                setCounter(prev => prev + 1)}} className="add-product">+</button>
             </div>
             <Button onClick={() => dispatch(addToCart({id: productInfo.id, name: productInfo.name, price: productInfo.price, count: counter, img: productInfo.image.mobile}) )}  type={"type-1"} text={"ADD TO CART"}/>
           </div>

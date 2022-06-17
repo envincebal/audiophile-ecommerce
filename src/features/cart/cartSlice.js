@@ -15,7 +15,7 @@ export const fetchProducts = createAsyncThunk("cart/getProducts", async() => {
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    status: null,
+    navModal: false,
     products: [],
     cartItems: [],
     subTotal: 0,
@@ -44,7 +44,6 @@ const cartSlice = createSlice({
       if(productItem.count < 1){
         state.cartItems = state.cartItems.filter(item => item.id !== payload.id);
       }
-
     },
     addToCart:(state, {payload}) => {
       const checkCart = state.cartItems.some(({id}) => id === payload.id);
@@ -61,14 +60,14 @@ const cartSlice = createSlice({
       state.cartItems.push(newProduct);
       state.subTotal += payload.price * payload.count;
     } else {
-
       state.subTotal += currentProduct.price * payload.count;
       currentProduct.count += payload.count;
     }
-
       state.vatCost = Math.round((20 * state.subTotal) / 100);
+    },
+    toggleModal: (state) =>{
+      state.navModal = !state.navModal;
     }
-
   },
   extraReducers: {
     [fetchProducts.fulfilled]: (state, {payload}) => {
@@ -84,7 +83,7 @@ const cartSlice = createSlice({
 });
 
 export const {clearCart,
-  addProduct, minusProduct,addToCart, totalPrice
+  addProduct, minusProduct,addToCart, totalPrice, toggleModal
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
