@@ -1,10 +1,12 @@
 .footer {
   background-color: #101010;
-  height: 365px;
-
+  height: auto;
+  @media (max-width: 700px) {
+  text-align: center;
+  }
   .footer-content {
     position: relative;
-
+    padding-bottom: 50px;
     &:after {
       content: " ";
       background-color: #d87d4a;
@@ -12,6 +14,11 @@
       top: 0;
       width: 100px;
       height: 5px;
+      @media (max-width: 700px) {
+       margin: 0 auto;
+       left: 0;
+       right: 0;
+      }
     }
 
     .footer-nav {
@@ -19,13 +26,29 @@
       justify-content: space-between;
       align-items: center;
       padding: 3.5rem 0 3rem 0;
-
+      @media (max-width: 1000px) {
+        display: block;
+      }
+      @media (max-width: 700px) {
+       padding-bottom: 20px;
+      }
       .footer-links {
         display: flex;
         list-style: none;
-
+        @media (max-width: 1000px) {
+          margin-top: 30px;
+        }
+        @media (max-width: 700px) {
+          display: block;
+        }
         .footer-link-item {
           margin-left: 20px;
+          @media (max-width: 1000px) {
+            margin: 0 20px 0 0;
+          }
+          @media (max-width: 700px) {
+            margin: 0 0 20px 0;
+          }
           a {
             text-decoration: none;
             color: #fff;
@@ -40,9 +63,18 @@
       justify-content: space-between;
       padding-bottom: 4rem;
       line-height: 25px;
+      flex-wrap: wrap;
+      @media (max-width: 700px) {
+        display: block;
+        padding-bottom: 30px;
+      }
       .footer-text {
         color: #ffffff79;
         width: 48%;
+        @media (max-width: 700px) {
+         margin: 0 auto;
+         width: 100%;
+        }
       }
 
       .social-media {
@@ -50,12 +82,20 @@
         align-self: end;
         flex: 50%;
         text-align: right;
+        @media (max-width: 700px) {
+          margin-top: 40px;
+       text-align: center;
+       width: 100%;
+        }
         .social-icon {
           width: 24px;
           height: 24px;
           color: #fff;
           margin-left: 15px;
           cursor: pointer;
+          @media (max-width: 700px) {
+         margin: 0 20px;
+          }
         }
       }
     }

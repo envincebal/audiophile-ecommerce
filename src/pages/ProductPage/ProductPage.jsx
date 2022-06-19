@@ -11,7 +11,7 @@ import Button from "../../components/Button/Button";
 
 import "./ProductPage.scss";
 
-const ProductPage = ({items}) => {
+const ProductPage = () => {
   const [others, setOthers] = useState([]);
   const [counter, setCounter] = useState(1);
   const location = useLocation();

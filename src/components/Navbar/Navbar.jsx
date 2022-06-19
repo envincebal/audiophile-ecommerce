@@ -13,8 +13,9 @@ const Navbar = () => {
   return (
     <div>
       <nav className="navbar">
+        <img className="mobile-menu" src="../../assets/shared/tablet/icon-hamburger.svg" alt="menu icon" />
         <Link to={"/"}>
-          <img src={"/assets/shared/desktop/logo.svg"} alt="logo"/>
+          <img className="logo" src={"/assets/shared/desktop/logo.svg"} alt="logo"/>
         </Link>
         <ul className="nav-links">
           <li className="link-item">

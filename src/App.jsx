@@ -20,38 +20,35 @@ function App() {
   return (
 
     <BrowserRouter>
-      <ScrollToTop/>
-            {navModal && (
+      <ScrollToTop />
+      {navModal && (
         <div className="modal-overlay">
 
         </div>
       )}
       <Routes>
-        <Route path="/" element={< HomePage />}/>
+        <Route path="/" element={<HomePage products={products} />}/>
         <Route
           path="/speakers"
-          element={< CategoryPage category = {
+          element={<CategoryPage category = {
           "speakers"
         } />}/>
         <Route
           path="/headphones"
-          element={< CategoryPage category = {
+          element={<CategoryPage category = {
           "headphones"
         } />}/>
         <Route
           path="/earphones"
-          element={< CategoryPage category = {
+          element={<CategoryPage category = {
           "earphones"
         } />}/>
-        <Route path="/checkout" element={< CheckoutPage />}/>
+        <Route path="/checkout" element={<CheckoutPage />}/>
         <Route
           path="/product/:slug"
-          element={< ProductPage items = {
-          products
-        } />}/>
+          element={<ProductPage />}/>
       </Routes>
     </BrowserRouter>
-
   );
 }
 

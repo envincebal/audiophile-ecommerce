@@ -7,13 +7,14 @@
 }
 
 html, body {
-
   font-family: "Manrope", sans-serif;
+  overflow-x:hidden;
+ 
 }
 
 .container{
-  max-width: 1110px;
   width: 88%;
+  max-width: 1110px;
   margin: 125px auto 0 auto;
 }
 
