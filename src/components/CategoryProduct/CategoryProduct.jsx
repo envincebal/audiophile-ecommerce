@@ -25,7 +25,14 @@ useEffect(() => {
 
   return (
     <div className="category-product">
-      <img className="category-img" src={`${img}`} alt={name}/>
+      <picture>
+        <source media="(max-width: 700px)" srcSet={`/assets/product-${slug}/mobile/image-category-page-preview.jpg`}></source>
+        <source media="(max-width: 1000px)" srcSet={`/assets/product-${slug}/tablet/image-category-page-preview.jpg`}></source>
+        <img
+          src={`/assets/product-${slug}/desktop/image-category-page-preview.jpg`}
+          className="category-img" 
+          alt="Product item"/>
+      </picture>
       <div className="category-info">
         {id === length - 1
           ? <p className="new-product">NEW PRODUCT</p>
