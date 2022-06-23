@@ -1,13 +1,13 @@
 .modal {
   background-color: #fff;
-  width: 377px;
+  max-width: 377px;
   position: absolute;
   right: 0;
-  top: 0px;
+  top: 0;
   border-radius: 10px;
   padding: 20px;
   z-index: 1;
-  
+
   .cart-remove-div {
     display: flex;
     justify-content: space-between;
@@ -101,6 +101,9 @@
       font-weight: 700;
       font-size: 18px;
     }
+  }
+  .checkout-link{
+    margin: 0 auto;
   }
 
   .checkout-btn {

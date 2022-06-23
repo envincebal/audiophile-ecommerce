@@ -17,7 +17,7 @@ const CategoryPage = ({category}) => {
     const getCategories = productsArr.filter(item => item.category === category);
   setCategories(getCategories);
   }, []);
-  
+
   return (
     <div className="category-page">
       <div className="category-hero">

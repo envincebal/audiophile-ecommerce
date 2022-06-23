@@ -47,7 +47,7 @@ const Modal = ({itemsLength, subTotal}) => {
               <p className="total">Total</p>
               <p className="total-amount">$ {subTotal.toLocaleString("en-US")}</p>
             </div>
-            <Link to={"/checkout"}>
+            <Link className="checkout-link" to={"/checkout"}>
               <button onClick={() => dispatch(toggleModal())} className="checkout-btn">CHECKOUT</button>
             </Link>
           </div>

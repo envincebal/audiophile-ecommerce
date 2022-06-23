@@ -10,7 +10,6 @@
   transition: all 0.3s ease;
   width: 160px;
   height: 48px;
-
   color: #fff;
 }
 
@@ -24,13 +23,11 @@
   transition: all 0.3s ease;
   width: 160px;
   height: 48px;
-
   color: #000;
 }
 
 .type-2:hover {
   background-color: #000;
-
   color: #fff;
 }
 
@@ -46,17 +43,21 @@
 
 .type-3:hover {
   background-color: #fff;
-
   color: #000;
 }
 
 .type-4 {
   width: 58px;
   height: 18px;
-
   color: #00000050;
 
   .arrow-link {
     color: #d87d4a;
+  }
+
+  .type-5{
+    width: 58px;
+    height: 18px;
+    color: #00000050;
   }
 }

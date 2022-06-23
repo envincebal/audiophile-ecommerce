@@ -44,8 +44,15 @@ const ProductPage = () => {
         <Navbar/>
       </div>
       <div className="product-div container">
+        <Link to={"/"}>
+          <Button text={"Go Back"} type={"type-5"}/>
+        </Link>
         <div className="product-head">
-          <img src={`/${productInfo.image.desktop}`} className="product-img" alt={productInfo.name} />
+        <picture>
+        <source media="(max-width: 700px)" srcSet={`/${productInfo.image.mobile}`}></source>
+        <source media="(max-width: 1000px)" srcSet={`/${productInfo.image.tablet}`}></source>
+       <img src={`/${productInfo.image.desktop}`} className="product-img" alt={productInfo.name} />
+      </picture>
           <div className="product-info">
           {productInfo.new && <p className="new-product">NEW PRODUCT</p>}
 
@@ -83,29 +90,41 @@ const ProductPage = () => {
           </div>
         </div>
         <div className="product-gallery">
-          <img className="gallery-img-1" src={`/${productInfo.image.desktop}`} alt="" />  
-          <img className="gallery-img-2" src={`/${productInfo.image.desktop}`} alt="" />
-          <img className="gallery-img-3" src={`/${productInfo.image.desktop}`} alt="" />
+          <img className="gallery-img-1" src={`/${productInfo.image.desktop}`} alt="other product" />  
+          <img className="gallery-img-2" src={`/${productInfo.image.desktop}`} alt="other product" />
+          <img className="gallery-img-3" src={`/${productInfo.image.desktop}`} alt="other product" />
         </div>
         <div className="related-products">
           <h2>YOU MAY ALSO LIKE</h2>
           <div className="related-items-div">
             <div className="related-item">
-            <img className="related-img" src={`/${productInfo.others[0].image.desktop}`} alt="" />
+              <picture>
+                <source media="(max-width: 700px)" srcSet={`/${productInfo.others[0].image.mobile}`}></source>
+                <source media="(max-width: 1000px)" srcSet={`/${productInfo.others[0].image.tablet}`}></source>
+                <img className="related-img" src={`/${productInfo.others[0].image.desktop}`} alt="related item" />
+              </picture>
             <h2 className="related-title">{productInfo.others[0].name}</h2>
             <Link to={`/product/${productInfo.others[0].slug}`} state={{info: others[0]}}>
               <Button type={"type-1"} text={"SEE PRODUCT"}/>
             </Link>
           </div>
           <div className="related-item">
-            <img className="related-img" src={`/${productInfo.others[1].image.desktop}`} alt="" />
+          <picture>
+                <source media="(max-width: 700px)" srcSet={`/${productInfo.others[1].image.mobile}`}></source>
+                <source media="(max-width: 1000px)" srcSet={`/${productInfo.others[1].image.tablet}`}></source>
+                <img className="related-img" src={`/${productInfo.others[1].image.desktop}`} alt="related item" />
+              </picture>
             <h2 className="related-title">{productInfo.others[1].name}</h2>
             <Link to={`/product/${productInfo.others[1].slug}`} state={{info: others[1]}}>
               <Button type={"type-1"} text={"SEE PRODUCT"} />
             </Link>
           </div>
           <div className="related-item">
-            <img className="related-img" src={`/${productInfo.others[2].image.desktop}`} alt="" />
+            <picture>
+              <source media="(max-width: 700px)" srcSet={`/${productInfo.others[2].image.mobile}`}></source>
+              <source media="(max-width: 1000px)" srcSet={`/${productInfo.others[2].image.tablet}`}></source>
+              <img className="related-img" src={`/${productInfo.others[2].image.desktop}`} alt="related item" />
+            </picture>
             <h2 className="related-title">{productInfo.others[2].name}</h2>
             <Link to={`/product/${productInfo.others[2].slug}`} state={{info: others[2]}}>
               <Button type={"type-1"} text={"SEE PRODUCT"} />
