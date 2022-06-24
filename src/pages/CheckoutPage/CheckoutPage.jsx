@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
@@ -31,12 +31,18 @@ const CheckoutPage = () => {
   }
 
   const toggleHandler = () => {
-    if (Object.keys(errors).length === 0) {
-      unregister("ePIN");
-      unregister("eNumber")
+    if(formState.isValid){
       setPayModal(prev => !prev);
     }
   }
+
+  useEffect(() => {
+    if (method === "cash") {
+      unregister("ePIN");
+      unregister("eNumber");
+    }
+
+  },[method, unregister])
 
   return (
     <div className="checkout-container">
@@ -51,7 +57,7 @@ const CheckoutPage = () => {
         </div>
         <div className="container">
         <Link to={"/"}>
-          <Button text={"Go Back"} type={"type-5"}/>
+          <Button className="back-btn" text={"Go Back"} type={"type-5"}/>
         </Link>
           <form onSubmit={handleSubmit(onSubmit)} className="checkout-form">
 

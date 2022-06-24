@@ -55,9 +55,17 @@
     color: #d87d4a;
   }
 
-  .type-5{
+  
+}
+.type-5{
     width: 58px;
     height: 18px;
-    color: #00000050;
+    color: #000;
+    background-color: #fff;
+    font-size: 15px;
+    margin-bottom: 50px;
   }
-}
+
+  .type-5:hover{
+    color: #d87d4a;
+  }
