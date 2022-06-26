@@ -13,7 +13,8 @@ import {fetchProducts} from "./features/cart/cartSlice";
 function App() {
 
   const dispatch = useDispatch();
-  const {products, navModal} = useSelector(store => store.cart);
+  const {products} = useSelector(store => store.cart);
+  const {cartModal,navModal} = useSelector(store => store.modal);
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch]);
@@ -21,7 +22,7 @@ function App() {
 
     <BrowserRouter>
       <ScrollToTop />
-      {navModal && (
+      {(cartModal || navModal) && (
         <div className="modal-overlay">
 
         </div>

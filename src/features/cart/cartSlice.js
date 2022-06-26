@@ -15,7 +15,6 @@ export const fetchProducts = createAsyncThunk("cart/getProducts", async() => {
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    navModal: false,
     products: [],
     cartItems: [],
     subTotal: 0,
@@ -64,9 +63,6 @@ const cartSlice = createSlice({
       currentProduct.count += payload.count;
     }
       state.vatCost = Math.round((20 * state.subTotal) / 100);
-    },
-    toggleModal: (state) =>{
-      state.navModal = !state.navModal;
     }
   },
   extraReducers: {

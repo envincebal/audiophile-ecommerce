@@ -42,7 +42,7 @@ const CheckoutPage = () => {
       unregister("eNumber");
     }
 
-  },[method, unregister])
+  },[method, unregister,formState.isValid])
 
   return (
     <div className="checkout-container">
@@ -250,7 +250,6 @@ const CheckoutPage = () => {
                                 : ""} label-div`}>
                                 <label htmlFor="e-money-number">e-Money Number</label>
                                 {errors.eNumber && <span>Field Required</span>}
-
                               </div>
 
                               <input

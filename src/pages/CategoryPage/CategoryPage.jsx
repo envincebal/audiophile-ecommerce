@@ -16,7 +16,7 @@ const CategoryPage = ({category}) => {
     const productsArr = products || JSON.parse(localStorage.getItem("itemsArr"));
     const getCategories = productsArr.filter(item => item.category === category);
   setCategories(getCategories);
-  }, []);
+  }, [category,products]);
 
   return (
     <div className="category-page">

@@ -149,9 +149,8 @@
                     flex-direction: row-reverse;
                     cursor: pointer;
                     background-color: #fff;
-                    float: left;
                     width: 100%;
-                    justify-content: space-between;
+                    justify-content: left;
                     border: 1px solid #cfcfcf;
                     border-radius: 10px;
                     height: 56px;
@@ -191,16 +190,26 @@
                   }
                   .label-div {
                     display: flex;
+                    @media (max-width: 700px) {
+                      display: block;
+                    }
                   }
                 }
 
                 .cash-div {
                   display: flex;
                   align-items: center;
+                  @media (max-width: 700px) {
+                    text-align: center;
+                    display: block;
+                  }
                   img {
                     width: 48px;
                     height: 48px;
                     margin-right: 20px;
+                    @media (max-width: 700px) {
+                      margin: 15px 0;
+                    }
                   }
 
                   p {
