@@ -18,6 +18,7 @@ const HomePage = ({products}) => {
 
   setHomeItem(findItem);
   },[products]);
+  
   return (
     <div className="homepage">
       <div className="homepage-hero">

@@ -7,7 +7,6 @@ import "./CategoryProduct.scss";
 const CategoryProduct = ({
   id,
   length,
-  img,
   name,
   desc,
   slug
@@ -17,11 +16,10 @@ const {products} = useSelector(store => store.cart);
 
 useEffect(() => {
   const productsArr = products || JSON.parse(localStorage.getItem("itemsArr"));
-  const findProduct = productsArr.find(item => item.id === id);
-
+  const findProduct = productsArr.find(item => item.slug === slug);
   setInfo(findProduct);
 
-}, []);
+}, [slug]);
 
   return (
     <div className="category-product">

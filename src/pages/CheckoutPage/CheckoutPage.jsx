@@ -3,18 +3,17 @@ import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
 import CheckoutModal from "../../components/CheckoutModal/CheckoutModal";
-import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {useForm} from 'react-hook-form';
 import "./CheckoutPage.scss";
-
 
 const CheckoutPage = () => {
   const [method,
     setMethod] = useState("e-money");
   const [payModal,
     setPayModal] = useState(false);
-
+  const navigate = useNavigate();
   const {subTotal, vatCost, cartItems} = useSelector(store => store.cart);
   const {register, unregister, handleSubmit, formState, formState: {
       errors
@@ -27,11 +26,10 @@ const CheckoutPage = () => {
 
   const onChangeValue = (method) => {
     setMethod(method);
-
   }
 
   const toggleHandler = () => {
-    if(formState.isValid){
+    if (formState.isValid) {
       setPayModal(prev => !prev);
     }
   }
@@ -42,13 +40,15 @@ const CheckoutPage = () => {
       unregister("eNumber");
     }
 
-  },[method, unregister,formState.isValid])
+  }, [method, unregister, formState.isValid])
 
   return (
     <div className="checkout-container">
       {payModal && (
         <div className="modal-overlay">
-          <CheckoutModal/>
+          <div className="checkout-modal-div">
+            <CheckoutModal/>
+          </div>
         </div>
       )}
       <div className="checkout-content">
@@ -56,11 +56,12 @@ const CheckoutPage = () => {
           <Navbar/>
         </div>
         <div className="container">
-        <Link to={"/"}>
-          <Button className="back-btn" text={"Go Back"} type={"type-5"}/>
-        </Link>
+          <Button
+            onClick={() => navigate(-1)}
+            className="back-btn"
+            text={"Go Back"}
+            type={"type-5"}/>
           <form onSubmit={handleSubmit(onSubmit)} className="checkout-form">
-
             <div className="checkout-div">
               <h1 className="checkout-title">CHECKOUT</h1>
               <div className="billing-details">

@@ -1,10 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {addProduct, clearCart, minusProduct, toggleModal} from "../../features/cart/cartSlice";
+import {addProduct, clearCart, minusProduct} from "../../features/cart/cartSlice";
+import { toggleCartModal} from "../../features/modal/modalSlice";
+
 import "./MenuModal.scss";
 
-const Modal = ({itemsLength, subTotal}) => {
+const MenuModal = ({itemsLength, subTotal}) => {
   const dispatch = useDispatch();
   const {cartItems} = useSelector(score => score.cart);
   return (
@@ -48,7 +50,7 @@ const Modal = ({itemsLength, subTotal}) => {
               <p className="total-amount">$ {subTotal.toLocaleString("en-US")}</p>
             </div>
             <Link className="checkout-link" to={"/checkout"}>
-              <button onClick={() => dispatch(toggleModal())} className="checkout-btn">CHECKOUT</button>
+              <button onClick={() => dispatch(toggleCartModal())} className="checkout-btn">CHECKOUT</button>
             </Link>
           </div>
         )}
@@ -56,4 +58,4 @@ const Modal = ({itemsLength, subTotal}) => {
   )
 }
 
-export default Modal;
+export default MenuModal;
