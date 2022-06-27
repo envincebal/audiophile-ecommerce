@@ -12,7 +12,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 80px;
+      margin-bottom: 120px;
       @media (max-width: 700px) {
         display: block;
       }
@@ -94,6 +94,7 @@
     .product-details {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 120px;
       @media (max-width:1000px) {
         display: block;
         margin-right: 0;
