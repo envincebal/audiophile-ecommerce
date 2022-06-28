@@ -27,7 +27,7 @@ const MenuModal = ({itemsLength, subTotal}) => {
                   return (
                     <li key={item.id}>
                       <div className="cart-info">
-                        <img className="cart-img" src={`../.${item.img}`} alt=""/>
+                        <img className="cart-img" src={`${process.env.PUBLIC_URL}/${item.img}`} alt=""/>
                         <div className="name-price">
                           <p className="name">{item.name}</p>
                           <p className="price">${item.price}</p>

@@ -286,7 +286,7 @@ const CheckoutPage = () => {
                         : (
 
                           <div className="cash-div">
-                            <img src="../../assets/checkout/icon-cash-on-delivery.svg" alt="cash"/>
+                            <img src={`${process.env.PUBLIC_URL}/assets/checkout/icon-cash-on-delivery.svg`} alt="cash"/>
                             <p>The "Cash on Delivery" option enables you to pay in cash when our delivery
                               courier arrives at your residence. Just make sure your address is correct so
                               that your order will not be cancelled.</p>
@@ -304,7 +304,7 @@ const CheckoutPage = () => {
                   {cartItems.map(item => {
                     return <li key={item.id}>
                       <div className="summary-cart-info">
-                        <img className="summary-cart-img" src={`../.${item.img}`} alt="thumbnail"/>
+                        <img className="summary-cart-img" src={`${process.env.PUBLIC_URL}/${item.img}`} alt="thumbnail"/>
                         <div className="summary-cart-desc">
                           <p className="name">{item.name}</p>
                           <p className="price">$ {item.price}</p>

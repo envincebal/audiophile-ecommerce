@@ -8,10 +8,10 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-content container">
         <div className="footer-nav">
-          <img src={"/assets/shared/desktop/logo.svg"} alt="logo" />
+          <img src={`${process.env.PUBLIC_URL}/assets/shared/desktop/logo.svg`} alt="logo" />
           <ul className="footer-links">
             <li className="footer-link-item">
-              <Link to={"/"}>HOME</Link>
+              <Link to={"/audiophile-ecommerce"}>HOME</Link>
             </li>
             <li className="footer-link-item">
               <Link to={"/headphones"}>HEADPHONES</Link>
@@ -30,9 +30,9 @@ const Footer = () => {
             devoted to helping you get the most out of personal audio. Come and visit our
             demo facility - we're open 7 days a week.</p>
           <div className="social-media">
-            <img className="social-icon" src={"/assets/shared/desktop/icon-facebook.svg"} alt="facebook icon"/>
-            <img className="social-icon" src={"/assets/shared/desktop/icon-instagram.svg"} alt="instragram icon"/>
-            <img className="social-icon" src={"/assets/shared/desktop/icon-twitter.svg"} alt="twitter icon"/>
+            <img className="social-icon" src={`${process.env.PUBLIC_URL}/assets/shared/desktop/icon-facebook.svg`} alt="facebook icon"/>
+            <img className="social-icon" src={`${process.env.PUBLIC_URL}/assets/shared/desktop/icon-instagram.svg`} alt="instragram icon"/>
+            <img className="social-icon" src={`${process.env.PUBLIC_URL}/assets/shared/desktop/icon-twitter.svg`} alt="twitter icon"/>
           </div>
         </div>
         <p className="copyright">Copyright 2022. All Rights Reserved</p>

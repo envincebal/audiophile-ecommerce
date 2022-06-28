@@ -19,14 +19,14 @@ const Navbar = () => {
         <img
           onClick={() => dispatch(toggleNavModal())}
           className="mobile-menu-btn"
-          src="../../assets/shared/tablet/icon-hamburger.svg"
+          src={`${process.env.PUBLIC_URL}/assets/shared/tablet/icon-hamburger.svg`}
           alt="menu icon"/>
-        <Link to={"/"}>
-          <img className="logo" src={"/assets/shared/desktop/logo.svg"} alt="logo"/>
+        <Link to={"/audiophile-ecommerce"}>
+          <img className="logo" src={`${process.env.PUBLIC_URL}/assets/shared/desktop/logo.svg`} alt="logo"/>
         </Link>
         <ul className="nav-links">
           <li className="link-item">
-            <Link to={"/"}>HOME</Link>
+            <Link to={"/audiophile-ecommerce"}>HOME</Link>
           </li>
           <li className="link-item">
             <Link to={"/headphones"}>HEADPHONES</Link>

@@ -37,7 +37,7 @@ const FeaturedProducts = () => {
       <div className="home-product-ZX9">
         <img
           className="ZX9-img"
-          src={"/assets/home/desktop/image-speaker-zx9.png"}
+          src={`${process.env.PUBLIC_URL}/assets/home/desktop/image-speaker-zx9.png`}
           alt={"ZX9-img"}/>
         <div className="ZX9-info">
           <h1 className="ZX9-title">ZX9 SPEAKER</h1>
@@ -67,7 +67,7 @@ const FeaturedProducts = () => {
         </div>
       </div>
       <div className="home-product-YX1">
-        <img src="../../assets/home/desktop/image-earphones-yx1.jpg" className="YX1-img" alt="earphones" />
+        <img src={`${process.env.PUBLIC_URL}/assets/home/desktop/image-earphones-yx1.jpg`}className="YX1-img" alt="earphones" />
         <div className="YX1-info">
           <div className="YX1-content">
             <h1 className="YX1-title">YX1 EARPHONES</h1>

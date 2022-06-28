@@ -18,10 +18,10 @@ const ConstantDetails = () => {
           your portable audio equipment.</p>
       </div>
       <picture>
-        <source media="(max-width: 700px)" srcSet="/assets/shared/mobile/image-best-gear.jpg"></source>
-        <source media="(max-width: 1000px)" srcSet="/assets/shared/tablet/image-best-gear.jpg"></source>
+        <source media="(max-width: 700px)" srcSet={`${process.env.PUBLIC_URL}/assets/shared/mobile/image-best-gear.jpg`}></source>
+        <source media="(max-width: 1000px)" srcSet={`${process.env.PUBLIC_URL}/assets/shared/tablet/image-best-gear.jpg`}></source>
         <img
-          src="/assets/shared/desktop/image-best-gear.jpg"
+          src={`${process.env.PUBLIC_URL}/assets/shared/desktop/image-best-gear.jpg`}
           className="constant-img"
           alt="constant"/>
       </picture>

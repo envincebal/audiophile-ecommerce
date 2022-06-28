@@ -19,7 +19,7 @@ const CheckoutModal = () => {
 
   return (
     <div className="checkout-modal">
-      <img className="checkout-img" src="../../assets/checkout/icon-order-confirmation.svg" alt="confirm" />
+      <img className="checkout-img" src={`${process.env.PUBLIC_URL}/assets/checkout/icon-order-confirmation.svg`} alt="confirm" />
       <h2 className="thanks-title">THANK YOU <br /> FOR YOUR ORDER</h2>
       <p className="confirm-desc">You will receive an email confirmation shortly.</p>
       <div className="items-summary">
@@ -27,7 +27,7 @@ const CheckoutModal = () => {
           {cartItems.map(item => {
             return <li key={item.id}>
             <div className="item-cart-info">
-              <img className="item-cart-img" src={`../.${item.img}`} alt="thumbnail"/>
+              <img className="item-cart-img" src={`${process.env.PUBLIC_URL}/${item.img}`} alt="thumbnail"/>
               <div className="item-cart-desc">
                 <p className="name">{item.name}</p>
                 <p className="price">$ {item.price}</p>
@@ -44,7 +44,7 @@ const CheckoutModal = () => {
           </div>
         </div>
       </div>
-      <Link to={"/"}>
+      <Link to={"/audiophile-ecommerce"}>
         <Button onClick={payBtn} type={"type-1"} text={"BACK TO HOME"} />
       </Link>
     </div>

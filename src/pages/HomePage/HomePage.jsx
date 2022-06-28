@@ -30,7 +30,7 @@ const HomePage = ({products}) => {
             <p className="hero-text">
               Experience natural, lifelike audio and exceptional build quality made for the
               passionate music enthusiast.</p>
-            <Link to={"product/xx99-mark-two-headphones"} state={{info: homeItem, products}}>
+            <Link to={`/product/xx99-mark-two-headphones`} state={{info: homeItem, products}}>
               <Button text={"SEE PRODUCT"} type={"type-1"}/>
             </Link>
 
