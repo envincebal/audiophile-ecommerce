@@ -15,9 +15,11 @@ function App() {
   const dispatch = useDispatch();
   const {products} = useSelector(store => store.cart);
   const {cartModal,navModal} = useSelector(store => store.modal);
+
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch]);
+
   return (
 
     <BrowserRouter>
