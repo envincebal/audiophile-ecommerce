@@ -5,7 +5,7 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 
 import ScrollToTop from "./components/ScrollToTop";
 
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {HashRouter as Router, Routes, Route} from "react-router-dom";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchProducts} from "./features/cart/cartSlice";
@@ -22,7 +22,7 @@ function App() {
 
   return (
 
-    <Router>
+    <Router basename="/">
       <ScrollToTop />
       {(cartModal || navModal) && (
         <div className="modal-overlay">
@@ -30,7 +30,7 @@ function App() {
         </div>
       )}
       <Routes>
-        <Route exact path="/audiophile-ecommerce" element={<HomePage products={products} />}/>
+        <Route exact path="/" element={<HomePage products={products} />}/>
         <Route
           path="/speakers"
           element={<CategoryPage category = {

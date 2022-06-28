@@ -44,7 +44,7 @@ const CheckoutModal = () => {
           </div>
         </div>
       </div>
-      <Link to={"/audiophile-ecommerce"}>
+      <Link to={"/"}>
         <Button onClick={payBtn} type={"type-1"} text={"BACK TO HOME"} />
       </Link>
     </div>

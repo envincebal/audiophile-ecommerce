@@ -21,12 +21,12 @@ const Navbar = () => {
           className="mobile-menu-btn"
           src={`${process.env.PUBLIC_URL}/assets/shared/tablet/icon-hamburger.svg`}
           alt="menu icon"/>
-        <Link to={"/audiophile-ecommerce"}>
+        <Link to={"/"}>
           <img className="logo" src={`${process.env.PUBLIC_URL}/assets/shared/desktop/logo.svg`} alt="logo"/>
         </Link>
         <ul className="nav-links">
           <li className="link-item">
-            <Link to={"/audiophile-ecommerce"}>HOME</Link>
+            <Link to={"/"}>HOME</Link>
           </li>
           <li className="link-item">
             <Link to={"/headphones"}>HEADPHONES</Link>

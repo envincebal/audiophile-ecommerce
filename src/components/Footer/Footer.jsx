@@ -11,7 +11,7 @@ const Footer = () => {
           <img src={`${process.env.PUBLIC_URL}/assets/shared/desktop/logo.svg`} alt="logo" />
           <ul className="footer-links">
             <li className="footer-link-item">
-              <Link to={"/audiophile-ecommerce"}>HOME</Link>
+              <Link to={"/"}>HOME</Link>
             </li>
             <li className="footer-link-item">
               <Link to={"/headphones"}>HEADPHONES</Link>
