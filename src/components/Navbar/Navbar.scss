@@ -19,7 +19,13 @@
       display: flex;
     }
   }
-  a {
+
+  .nav-links {
+    display: flex;
+    @media (max-width: 1000px) {
+      display: none;
+    }
+      a {
     margin-left: 40px;
     @media (max-width: 1000px) {
       margin-right: auto;
@@ -28,12 +34,6 @@
       margin: 0 auto;
     }
   }
-
-  .nav-links {
-    display: flex;
-    @media (max-width: 1000px) {
-      display: none;
-    }
     .link-item {
       list-style-type: none;
       margin: 0 10px;
