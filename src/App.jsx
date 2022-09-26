@@ -6,8 +6,10 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import ScrollToTop from "./components/ScrollToTop";
 
 import {HashRouter as Router, Routes, Route} from "react-router-dom";
+import {toggleCartModal} from "./features/modal/modalSlice";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
+
 import {fetchProducts} from "./features/cart/cartSlice";
 
 function App() {
@@ -22,10 +24,10 @@ function App() {
 
   return (
 
-    <Router basename="/">
+    <Router>
       <ScrollToTop />
       {(cartModal || navModal) && (
-        <div className="modal-overlay">
+        <div onClick={() => dispatch(toggleCartModal())} className="modal-overlay">
 
         </div>
       )}
